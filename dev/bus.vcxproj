@@ -1,0 +1,325 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{0535032D-2FDF-31A9-BD7C-8C2F17F8972D}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>bus</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">E:\wLua\nng_examples\dev\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">bus.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">bus</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:\wLua\nng_examples\dev\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">bus.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">bus</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">E:\wLua\nng_examples\dev\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">bus.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">bus</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">E:\wLua\nng_examples\dev\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">bus.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">bus</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <AdditionalIncludeDirectories>E:\wLua\nng\include;E:\wLua\nng_examples;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>E:\wLua\nng\dev\Debug\nng.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>E:/wLua/nng_examples/dev/Debug/bus.lib</ImportLibrary>
+      <ProgramDataBaseFile>E:/wLua/nng_examples/dev/Debug/bus.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <AdditionalIncludeDirectories>E:\wLua\nng\include;E:\wLua\nng_examples;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>E:\wLua\nng\dev\Debug\nng.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>E:/wLua/nng_examples/dev/Release/bus.lib</ImportLibrary>
+      <ProgramDataBaseFile>E:/wLua/nng_examples/dev/Release/bus.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="MinSizeRel";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <AdditionalIncludeDirectories>E:\wLua\nng\include;E:\wLua\nng_examples;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>E:\wLua\nng\dev\Debug\nng.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>E:/wLua/nng_examples/dev/MinSizeRel/bus.lib</ImportLibrary>
+      <ProgramDataBaseFile>E:/wLua/nng_examples/dev/MinSizeRel/bus.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <AdditionalIncludeDirectories>E:\wLua\nng\include;E:\wLua\nng_examples;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>E:\wLua\nng\dev\Debug\nng.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>E:/wLua/nng_examples/dev/RelWithDebInfo/bus.lib</ImportLibrary>
+      <ProgramDataBaseFile>E:/wLua/nng_examples/dev/RelWithDebInfo/bus.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\wLua\nng_examples\CMakeLists.txt">
+      <StdOutEncoding>UTF-8</StdOutEncoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule E:/wLua/nng_examples/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+D:\Programs\CMake\bin\cmake.exe -SE:/wLua/nng_examples -BE:/wLua/nng_examples/dev --check-stamp-file E:/wLua/nng_examples/dev/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Programs\CMake\share\cmake-3.20\Modules\CMakeCInformation.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\CMakeCXXInformation.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\CMakeCommonLanguageInclude.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\CMakeGenericSystem.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\CMakeInitializeConfigs.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\CMakeLanguageInformation.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\CMakeRCInformation.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\CMakeSystemSpecificInformation.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\CMakeSystemSpecificInitialize.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\Compiler\MSVC-C.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\Compiler\MSVC-CXX.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\Platform\Windows-MSVC-C.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\Platform\Windows-MSVC-CXX.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\Platform\Windows-MSVC.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\Platform\Windows.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\Platform\WindowsPaths.cmake;E:\wLua\nng_examples\dev\CMakeFiles\3.20.0\CMakeCCompiler.cmake;E:\wLua\nng_examples\dev\CMakeFiles\3.20.0\CMakeCXXCompiler.cmake;E:\wLua\nng_examples\dev\CMakeFiles\3.20.0\CMakeRCCompiler.cmake;E:\wLua\nng_examples\dev\CMakeFiles\3.20.0\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">E:\wLua\nng_examples\dev\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule E:/wLua/nng_examples/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+D:\Programs\CMake\bin\cmake.exe -SE:/wLua/nng_examples -BE:/wLua/nng_examples/dev --check-stamp-file E:/wLua/nng_examples/dev/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Programs\CMake\share\cmake-3.20\Modules\CMakeCInformation.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\CMakeCXXInformation.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\CMakeCommonLanguageInclude.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\CMakeGenericSystem.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\CMakeInitializeConfigs.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\CMakeLanguageInformation.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\CMakeRCInformation.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\CMakeSystemSpecificInformation.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\CMakeSystemSpecificInitialize.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\Compiler\MSVC-C.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\Compiler\MSVC-CXX.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\Platform\Windows-MSVC-C.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\Platform\Windows-MSVC-CXX.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\Platform\Windows-MSVC.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\Platform\Windows.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\Platform\WindowsPaths.cmake;E:\wLua\nng_examples\dev\CMakeFiles\3.20.0\CMakeCCompiler.cmake;E:\wLua\nng_examples\dev\CMakeFiles\3.20.0\CMakeCXXCompiler.cmake;E:\wLua\nng_examples\dev\CMakeFiles\3.20.0\CMakeRCCompiler.cmake;E:\wLua\nng_examples\dev\CMakeFiles\3.20.0\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:\wLua\nng_examples\dev\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule E:/wLua/nng_examples/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+D:\Programs\CMake\bin\cmake.exe -SE:/wLua/nng_examples -BE:/wLua/nng_examples/dev --check-stamp-file E:/wLua/nng_examples/dev/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Programs\CMake\share\cmake-3.20\Modules\CMakeCInformation.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\CMakeCXXInformation.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\CMakeCommonLanguageInclude.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\CMakeGenericSystem.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\CMakeInitializeConfigs.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\CMakeLanguageInformation.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\CMakeRCInformation.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\CMakeSystemSpecificInformation.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\CMakeSystemSpecificInitialize.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\Compiler\MSVC-C.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\Compiler\MSVC-CXX.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\Platform\Windows-MSVC-C.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\Platform\Windows-MSVC-CXX.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\Platform\Windows-MSVC.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\Platform\Windows.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\Platform\WindowsPaths.cmake;E:\wLua\nng_examples\dev\CMakeFiles\3.20.0\CMakeCCompiler.cmake;E:\wLua\nng_examples\dev\CMakeFiles\3.20.0\CMakeCXXCompiler.cmake;E:\wLua\nng_examples\dev\CMakeFiles\3.20.0\CMakeRCCompiler.cmake;E:\wLua\nng_examples\dev\CMakeFiles\3.20.0\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">E:\wLua\nng_examples\dev\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule E:/wLua/nng_examples/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+D:\Programs\CMake\bin\cmake.exe -SE:/wLua/nng_examples -BE:/wLua/nng_examples/dev --check-stamp-file E:/wLua/nng_examples/dev/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Programs\CMake\share\cmake-3.20\Modules\CMakeCInformation.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\CMakeCXXInformation.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\CMakeCommonLanguageInclude.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\CMakeGenericSystem.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\CMakeInitializeConfigs.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\CMakeLanguageInformation.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\CMakeRCInformation.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\CMakeSystemSpecificInformation.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\CMakeSystemSpecificInitialize.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\Compiler\MSVC-C.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\Compiler\MSVC-CXX.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\Platform\Windows-MSVC-C.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\Platform\Windows-MSVC-CXX.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\Platform\Windows-MSVC.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\Platform\Windows.cmake;D:\Programs\CMake\share\cmake-3.20\Modules\Platform\WindowsPaths.cmake;E:\wLua\nng_examples\dev\CMakeFiles\3.20.0\CMakeCCompiler.cmake;E:\wLua\nng_examples\dev\CMakeFiles\3.20.0\CMakeCXXCompiler.cmake;E:\wLua\nng_examples\dev\CMakeFiles\3.20.0\CMakeRCCompiler.cmake;E:\wLua\nng_examples\dev\CMakeFiles\3.20.0\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">E:\wLua\nng_examples\dev\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="E:\wLua\nng_examples\bus.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="E:\wLua\nng_examples\dev\ZERO_CHECK.vcxproj">
+      <Project>{1FE41FBB-A56F-316A-98AD-70FCFA411856}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

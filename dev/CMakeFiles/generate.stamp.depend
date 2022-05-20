@@ -1,0 +1,23 @@
+# CMake generation dependency list for this directory.
+D:/Programs/CMake/share/cmake-3.20/Modules/CMakeCInformation.cmake
+D:/Programs/CMake/share/cmake-3.20/Modules/CMakeCXXInformation.cmake
+D:/Programs/CMake/share/cmake-3.20/Modules/CMakeCommonLanguageInclude.cmake
+D:/Programs/CMake/share/cmake-3.20/Modules/CMakeGenericSystem.cmake
+D:/Programs/CMake/share/cmake-3.20/Modules/CMakeInitializeConfigs.cmake
+D:/Programs/CMake/share/cmake-3.20/Modules/CMakeLanguageInformation.cmake
+D:/Programs/CMake/share/cmake-3.20/Modules/CMakeRCInformation.cmake
+D:/Programs/CMake/share/cmake-3.20/Modules/CMakeSystemSpecificInformation.cmake
+D:/Programs/CMake/share/cmake-3.20/Modules/CMakeSystemSpecificInitialize.cmake
+D:/Programs/CMake/share/cmake-3.20/Modules/Compiler/CMakeCommonCompilerMacros.cmake
+D:/Programs/CMake/share/cmake-3.20/Modules/Compiler/MSVC-C.cmake
+D:/Programs/CMake/share/cmake-3.20/Modules/Compiler/MSVC-CXX.cmake
+D:/Programs/CMake/share/cmake-3.20/Modules/Platform/Windows-MSVC-C.cmake
+D:/Programs/CMake/share/cmake-3.20/Modules/Platform/Windows-MSVC-CXX.cmake
+D:/Programs/CMake/share/cmake-3.20/Modules/Platform/Windows-MSVC.cmake
+D:/Programs/CMake/share/cmake-3.20/Modules/Platform/Windows.cmake
+D:/Programs/CMake/share/cmake-3.20/Modules/Platform/WindowsPaths.cmake
+E:/wLua/nng_examples/CMakeLists.txt
+E:/wLua/nng_examples/dev/CMakeFiles/3.20.0/CMakeCCompiler.cmake
+E:/wLua/nng_examples/dev/CMakeFiles/3.20.0/CMakeCXXCompiler.cmake
+E:/wLua/nng_examples/dev/CMakeFiles/3.20.0/CMakeRCCompiler.cmake
+E:/wLua/nng_examples/dev/CMakeFiles/3.20.0/CMakeSystem.cmake

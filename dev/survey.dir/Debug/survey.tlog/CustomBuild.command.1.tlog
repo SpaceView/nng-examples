@@ -1,0 +1,10 @@
+^E:\WLUA\NNG_EXAMPLES\CMAKELISTS.TXT
+setlocal
+D:\Programs\CMake\bin\cmake.exe -SE:/wLua/nng_examples -BE:/wLua/nng_examples/dev --check-stamp-file E:/wLua/nng_examples/dev/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -1,0 +1,10 @@
+^E:\WLUA\NNG_EXAMPLES\DEV\CMAKEFILES\9C1E073872813C02959287866153F4D1\GENERATE.STAMP.RULE
+setlocal
+D:\Programs\CMake\bin\cmake.exe -SE:/wLua/nng_examples -BE:/wLua/nng_examples/dev --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file E:/wLua/nng_examples/dev/nng_examples.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -1,0 +1,4 @@
+﻿  pubsub.c
+E:\wLua\nng_examples\pubsub.c(26,27): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\wLua\nng_examples\pubsub.c(27,22): warning C4996: 'asctime': This function or variable may be unsafe. Consider using asctime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  pubsub.vcxproj -> E:\wLua\nng_examples\dev\Debug\pubsub.exe
