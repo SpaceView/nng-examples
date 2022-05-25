@@ -1,3 +1,2 @@
 ﻿  test001.cpp
-E:\wLua\nng_examples\test001\test001.cpp(42,33): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
   test001.vcxproj -> E:\wLua\nng_examples\dev\x64\Debug\test001.exe

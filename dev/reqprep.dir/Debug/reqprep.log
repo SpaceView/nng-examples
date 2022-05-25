@@ -1,4 +1,1 @@
-﻿  reqprep.c
-E:\wLua\nng_examples\reqprep.c(34,27): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-E:\wLua\nng_examples\reqprep.c(35,22): warning C4996: 'asctime': This function or variable may be unsafe. Consider using asctime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  reqprep.vcxproj -> E:\wLua\nng_examples\dev\Debug\reqprep.exe
+﻿  reqprep.vcxproj -> E:\wLua\nng_examples\dev\Debug\reqprep.exe

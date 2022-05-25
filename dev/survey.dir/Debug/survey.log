@@ -1,1 +1,5 @@
-﻿  survey.vcxproj -> E:\wLua\nng_examples\dev\Debug\survey.exe
+﻿  Building Custom Rule E:/wLua/nng_examples/CMakeLists.txt
+  survey.c
+E:\wLua\nng_examples\survey.c(39,27): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\wLua\nng_examples\survey.c(40,22): warning C4996: 'asctime': This function or variable may be unsafe. Consider using asctime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  survey.vcxproj -> E:\wLua\nng_examples\dev\Debug\survey.exe

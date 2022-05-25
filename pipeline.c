@@ -6,8 +6,8 @@ https://nanomsg.org/gettingstarted/nng/pipeline.html
 kill $node0
 
 windows usage:
-pubsub server  "ws://127.0.0.1:7715"
-pubsub client  "ws://127.0.0.1:7715"
+./reqprep "node0" "ipc:///tmp/reqrep.ipc"
+./reqprep "node1" "ipc:///tmp/reqrep.ipc"
 
 */
 #include <stdlib.h>

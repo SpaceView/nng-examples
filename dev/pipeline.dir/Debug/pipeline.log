@@ -1,4 +1,5 @@
-﻿  pipeline.c
-E:\wLua\nng_examples\pipeline.c(47,1): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-E:\wLua\nng_examples\pipeline.c(50,13): warning C4101: “bytes”: 未引用的局部变量
+﻿  Building Custom Rule E:/wLua/nng_examples/CMakeLists.txt
+  pipeline.c
+E:\wLua\nng_examples\pipeline.c(59,1): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+E:\wLua\nng_examples\pipeline.c(62,13): warning C4101: “bytes”: 未引用的局部变量
   pipeline.vcxproj -> E:\wLua\nng_examples\dev\Debug\pipeline.exe
