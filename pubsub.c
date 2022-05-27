@@ -8,8 +8,8 @@ sleep 5
 kill $server $client0 $client1 $client2
 
 windows usage:
-pubsub server  "ws://127.0.0.1:7715"
-pubsub client  "ws://127.0.0.1:7715"
+./pubsub server  "ws://127.0.0.1:7715"
+./pubsub client  "ws://127.0.0.1:7715"
 */
 #include <stdlib.h>
 #include <stdio.h>
@@ -59,8 +59,21 @@ server(const char *url)
                 printf("SERVER: PUBLISHING DATE %s\n", d);
                 if ((rv = nng_send(sock, d, strlen(d) + 1, 0)) != 0) {
                         fatal("nng_send", rv);
+                        Sleep(2000); // sleep(1);
                 }
-                Sleep(1); // sleep(1);
+
+                //{
+                //    // sending not allowed
+                //    char* buf = NULL;
+                //    size_t sz;
+                //    if ((rv = nng_recv(sock, &buf, &sz, NNG_FLAG_ALLOC)) != 0) {
+                //        fatal("nng_recv", rv);
+                //        Sleep(2000); // sleep(1);
+                //    }
+                //    printf("SERVER (%s): RECEIVED %s\n", url, buf);
+                //    nng_free(buf, sz);
+                //}
+                ////Sleep(2); // sleep(1);
         }
 }
 

@@ -1,0 +1,3 @@
+﻿  client.c
+E:\wLua\nng_examples\asyncClient\client.c(56): warning C4172: 返回局部变量或临时变量的地址: text
+  asyncClient.vcxproj -> E:\wLua\nng_examples\dev\x64\Debug\asyncClient.exe

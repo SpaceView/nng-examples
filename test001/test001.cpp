@@ -1,143 +1,120 @@
-﻿#include <stdio.h>
-//#include <pthread.h>
+﻿/*
+https://nanomsg.org/gettingstarted/nng/pubsub.html
+./pubsub server ipc:///tmp/pubsub.ipc & server=$! && sleep 1
+./pubsub client ipc:///tmp/pubsub.ipc client0 & client0=$!
+./pubsub client ipc:///tmp/pubsub.ipc client1 & client1=$!
+./pubsub client ipc:///tmp/pubsub.ipc client2 & client2=$!
+sleep 5
+kill $server $client0 $client1 $client2
+
+windows usage:
+pubsub server  "ws://127.0.0.1:7715"
+pubsub client  "ws://127.0.0.1:7715"
+
+./test001 server  "ws://127.0.0.1:7715"
+./test001 client  "ws://127.0.0.1:7715"
+*/
 #include <stdlib.h>
+#include <stdio.h>
 #include <string.h>
-//#include <unistd.h>
+#include <time.h>
+#include <unistd.h>
+
 #include <nng/nng.h>
-#include <nng/compat/nanomsg/bus.h>
-#include <nng/compat/nanomsg/pair.h>
-#include <nng/compat/nanomsg/nn.h>
+#include <nng/protocol/pubsub0/pub.h>
+#include <nng/protocol/pubsub0/sub.h>
 
-#include <Windows.h>
-/*
-PAIR - simple one-to-one communication
-BUS - simple many-to-many communication
-REQREP - allows to build clusters of stateless services to process user requests
-PUBSUB - distributes messages to large sets of interested subscribers
-PIPELINE - aggregates messages from multiple sources and load balances them among many destinations
-SURVEY - allows to query state of multiple applications in a single go
-*/
-/*
-INPROC - transport within a process (between threads, modules etc.) 线程
-IPC - transport between processes on a single machine   进程
-TCP - network transport via TCP  网络TCP
-WS - websockets over TCP   websockets TCP
-*/
+#define SERVER "server"
+#define CLIENT "client"
 
-//ipc:// 标识用于多进程通信,后面的sky_test是我自己命名，可以随意命名
-const char* url = "ipc://sky_test";
+#include <windows.h>
 
-int server_sock_init(int* sock)
+void
+fatal(const char* func, int rv)
 {
-    *sock = nn_socket(AF_SP, NN_PAIR);
-    if (*sock < 0) {
-        printf("create server sock failed\r\n");
-        return 1;
-    }
-    if (nn_bind(*sock, url) < 0) {
-        printf("bind server sock failed\r\n");
-        return 1;
-    }
-    printf("server socket init success...\r\n");
-    return 0;
+    fprintf(stderr, "%s: %s\n", func, nng_strerror(rv));
 }
 
-int client_sock_init(int* sock)
+char*
+date(void)
 {
-    *sock = nn_socket(AF_SP, NN_PAIR);
-    if (*sock < 0) {
-        printf("create server sock failed\r\n");
-        return 1;
-    }
-    if (nn_connect(*sock, url) < 0) {
-        printf("bind server sock failed\r\n");
-        return 1;
-    }
-    printf("client socket init success...\r\n");
-    return 0;
+    time_t now = time(&now);
+    struct tm* info = localtime(&now);
+    char* text = asctime(info);
+    text[strlen(text) - 1] = '\0'; // remove '\n'
+    return (text);
 }
 
-void child_process_test()
+int
+server(const char* url)
 {
-    int c_sock;
-    const char* tx_msg = "Hello Main Process";
-    if (0 != client_sock_init(&c_sock)) {
-        return;
+    nng_socket sock;
+    int rv;
+
+    if ((rv = nng_pub0_open(&sock)) != 0) {
+        fatal("nng_pub0_open", rv);
     }
-    while (1) {
-        //发送信息到主进程客户端
-        while (1) {
-            size_t len = strlen(tx_msg) + 1;
-            if (nn_send(c_sock, tx_msg, len, 0) < 0) {
-                printf("Thread Send Msg Failed\r\n");
-                Sleep(5); //usleep(500000);
-                continue;
-            }
-            break;
+    if ((rv = nng_listen(sock, url, NULL, 0)) < 0) {
+        fatal("nng_listen", rv);
+    }
+    for (;;) {
+        char* d = date();
+        printf("SERVER: PUBLISHING DATE %s\n", d);
+        if ((rv = nng_send(sock, d, strlen(d) + 1, 0)) != 0) {
+            fatal("nng_send", rv);
         }
-        while (1) {
-            //接收主进程客户端信息
-            char* rx_msg = NULL;
-            int result = nn_recv(c_sock, &rx_msg, NN_MSG, NN_DONTWAIT);
-            if (result > 0) {
-                printf("Child Process Recieve: %s\r\n", rx_msg);
-                nn_freemsg(rx_msg);
-                break;
-            }
-            Sleep(2);//usleep(200000);
-        }
+        Sleep(2); // sleep(1);
     }
 }
 
-void main_process_test()
+int
+client(const char* url, const char* name)
 {
-    int s_sock;
-    const char* tx_msg = "Hi Child Process Test";
-    if (0 != server_sock_init(&s_sock)) {
-        return;
+    nng_socket sock;
+    int rv;
+    char buf[100];
+
+    if ((rv = nng_sub0_open(&sock)) != 0) {
+        fatal("nng_sub0_open", rv);
     }
-    //sleep(1);
-    while (1) {
-        while (1) {
-            //接收子进程客户端信息
-            char* rx_msg = NULL;
-            int result = nn_recv(s_sock, &rx_msg, NN_MSG, NN_DONTWAIT);
-            if (result > 0) {
-                printf("Main Recieve: %s\r\n", rx_msg);
-                nn_freemsg(rx_msg);
-                break;
-            }
-            Sleep(2); //usleep(200000);
+
+    // subscribe to everything (empty means all topics)
+    if ((rv = nng_setopt(sock, NNG_OPT_SUB_SUBSCRIBE, "", 0)) != 0) {
+        fatal("nng_setopt", rv);
+    }
+    if ((rv = nng_dial(sock, url, NULL, 0)) != 0) {
+        fatal("nng_dial", rv);
+    }
+    for (;;) {
+        char* buf = NULL;
+        size_t sz;
+        if ((rv = nng_recv(sock, &buf, &sz, NNG_FLAG_ALLOC)) != 0) {
+            fatal("nng_recv", rv);
+            continue;
         }
-        //发送信息到子进程客户端
-        while (1) {
-            size_t len = strlen(tx_msg) + 1;
-            if (nn_send(s_sock, tx_msg, len, 0) < 0) {
-                printf("Main Send Msg Failed\r\n");
-                Sleep(5); //usleep(500000);
-                continue;
+        printf("CLIENT (%s): RECEIVED %s\n", name, buf);
+        nng_free(buf, sz);
+        {
+            static int rcv_count = 0;
+            sprintf_s(buf, 100, "received count = %d ", rcv_count++);
+            if ((rv = nng_send(sock, buf, strlen(buf) + 1, 0)) != 0) {
+                fatal("nng_send", rv);
             }
-            break;
         }
+        //Sleep(2);
     }
 }
 
-int main()
+int
+main(const int argc, const char** argv)
 {
-    /*pid_t fpid;
-    fpid = fork();
-    if (fpid < 0) {
-        printf("fork failed\r\n");
-        return 1;
-    }
-    else if (fpid == 0) {
-        //子进程
-        child_process_test();
-    }
-    else {
-        //主进程
-        main_process_test();
-    }*/
+    if ((argc >= 2) && (strcmp(SERVER, argv[1]) == 0))
+        return (server(argv[2]));
 
-    return 0;
+    if ((argc >= 3) && (strcmp(CLIENT, argv[1]) == 0))
+        return (client(argv[2], argv[3]));
+
+    fprintf(stderr, "Usage: pubsub %s|%s <URL> <ARG> ...\n",
+        SERVER, CLIENT);
+    return 1;
 }

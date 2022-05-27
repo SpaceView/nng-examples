@@ -6,8 +6,9 @@ https://nanomsg.org/gettingstarted/nng/pipeline.html
 kill $node0
 
 windows usage:
-./reqprep "node0" "ipc:///tmp/reqrep.ipc"
-./reqprep "node1" "ipc:///tmp/reqrep.ipc"
+./pipeline "node0" "ipc:///tmp/pipeline.ipc"
+./pipeline "node1" "ipc:///tmp/pipeline.ipc" "Hello, World!"
+./pipeline "node1" "ipc:///tmp/pipeline.ipc" "Goodbye."
 
 */
 #include <stdlib.h>

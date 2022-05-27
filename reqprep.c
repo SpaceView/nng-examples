@@ -57,6 +57,7 @@ node0(const char *url)
                 if ((rv = nng_recv(sock, &buf, &sz, NNG_FLAG_ALLOC)) != 0) {
                         fatal("nng_recv", rv);
                 }
+                Sleep(5000);
                 if ((sz == (strlen(DATE) + 1)) && (strcmp(DATE, buf) == 0)) {
                         printf("NODE0: RECEIVED DATE REQUEST\n");
                         char *d = date();
@@ -66,6 +67,24 @@ node0(const char *url)
                         }
                 }
                 nng_free(buf, sz);
+                /* {
+                    // sending not allowed
+                    char* buf = NULL;
+                    size_t sz;
+                    if ((rv = nng_recv(sock, &buf, &sz, NNG_FLAG_ALLOC)) != 0) {
+                        fatal("nng_recv", rv);
+                        Sleep(2000); // sleep(1);
+                    }
+                    printf("SERVER (%s): RECEIVED %s\n", url, buf);
+                    nng_free(buf, sz);
+                }*/
+                /* {
+                    static int rcv_count = 0;
+                    sprintf_s(buf, 100, "received count = %d ", rcv_count++);
+                    if ((rv = nng_send(sock, buf, strlen(buf) + 1, 0)) != 0) {
+                        fatal("nng_send", rv);
+                    }
+                }*/
         }
 }
 
